@@ -1,9 +1,17 @@
 # wyze-bridge
-Install [docker-wyze-bridge](https://github.com/mrlt8/docker-wyze-bridge), but without using docker. Designed for LXC or VM, to avoid nested virtualization.
 
-wyze-bridge.py will download and install (or update to) the latest version of docker-wyze-bridge and as well as it's dependcy: [mediamtx](https://github.com/bluenviron/mediamtx).
-If ffmpeg is not installed, it'll install the latest version of [ffmpeg-for-homebridge](https://github.com/homebridge/ffmpeg-for-homebridge).
-It'll configure the appropriate system service (openrc/systemd), and accommodates running the service using Flask or gunicorn.
+## Purpose
+I wrote wyze-bridge.py to install the app [docker-wyze-bridge](https://github.com/mrlt8/docker-wyze-bridge) natively, not using docker.
+This is useful for those who use other virtualization methods (lxc, kvm), and don't want to / or can't run nested virtualization.
+
+## Script explanation
+When using the `install` action, this script will download the app from the latest release of [docker-wyze-bridge](https://github.com/mrlt8/docker-wyze-bridge), and install it to `/srv/wyze-bridge`.
+It'll create a service account called `wyze`, and install the required Python modules into a virtual environment (venv) in the service account's home folder.
+It also installs the latest version of [mediamtx](https://github.com/bluenviron/mediamtx) and installs it to `/srv/mediamtx`.
+If ffmpeg is not found on your system, it'll install the latest release of [ffmpeg-for-homebridge](https://github.com/homebridge/ffmpeg-for-homebridge).
+To keep your customized configuration from being overwritten, a separate environment (settings) file is created at `/etc/wyze-bridge/app.env`.
+
+The script also includes an `update` action, that will update mediamtx and docker-wyze-bridge to the latest versions.
 
 ## Requirements
 - Python 3.10 or newer
