@@ -2,7 +2,7 @@
 
 ## Purpose
 I wrote wyze-bridge.py to install the app [docker-wyze-bridge](https://github.com/mrlt8/docker-wyze-bridge) natively, not using docker.
-This is useful for those who use other virtualization methods (lxc, kvm), and don't want to / or can't run nested virtualization.
+This is useful for those who use other virtualization methods (lxc, kvm), and don't want to (or can't) run nested virtualization.
 
 ## Script explanation
 When using the `install` action, this script will download the app from the latest release of [docker-wyze-bridge](https://github.com/mrlt8/docker-wyze-bridge), and install it to `/srv/wyze-bridge`.
