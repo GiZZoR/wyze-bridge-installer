@@ -16,7 +16,7 @@ If ffmpeg is not found on your system, it'll install the latest release of [ffmp
 To keep your customized configuration from being overwritten, a separate environment (settings) file is created at `/etc/wyze-bridge/app.env`.
 
 
-The script also includes an `update` action, that will update mediamtx and docker-wyze-bridge to the latest versions.
+The script also includes an `update` action, that will backup your current installation and then update mediamtx and docker-wyze-bridge to the latest versions.
 
 ## Requirements
 - Python 3.10 or newer
