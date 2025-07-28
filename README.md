@@ -1,5 +1,8 @@
 # wyze-bridge
 
+## Alternate Project: Thingino
+I recently found [Thingino](https://thingino.com/), which provides exactly what I wanted, full local access to my camera. This project produces firmware images that replace the Wyze functionality (i.e. no app and event monitoring or cloud features from Wyze), but allows me to directly connect my camera to local services, like [Frigate](https://frigate.video/). I highly recommend looking into Thingino if you're okay with not using the Wyze app any longer.
+
 ## Purpose
 I wrote wyze-bridge.py to install the app [docker-wyze-bridge](https://github.com/mrlt8/docker-wyze-bridge) natively, not using docker.
 This is useful for those who use other virtualization methods (lxc, kvm), and don't want to (or can't) run nested virtualization.
